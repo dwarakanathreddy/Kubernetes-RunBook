@@ -1,0 +1,3 @@
+kubectl get deployments --show-labels
+kubectl get deployment -l app=demonginx
+kubectl scale deployment deploymentName --replicas=5

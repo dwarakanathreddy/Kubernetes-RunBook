@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springdemo
+  labels:
+    name: springdemo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: springdemo
+  template:
+    metadata:
+      labels:
+        name: springdemo
+    spec:
+      containers:
+        - name: springdemo
+          image: djampani/springdemo
+          ports:
+            - containerPort: 7070
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
