@@ -1,0 +1,9 @@
+kubectl proxy # to start the dashboard at 8001
+#http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/pod?namespace=default
+# generate token to login to dashboard https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"
+kubectl create -f file.pod.yml --dry-run --validate=true
+# will error out if pod already exists
+kubectl apply -f file.yml --save-config #save config will save annotations
+kubectl describe resoure resource_name
+kubectl exec pod_name -it sh

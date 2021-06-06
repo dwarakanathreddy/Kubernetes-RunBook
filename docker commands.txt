@@ -1,0 +1,6 @@
+sudo docker docker build -t app-name .
+sudo docker tag image-name djampani/app-name
+sudo docker push djampani/app-name
+
+
+# http://127.0.0.1:9000/hello/greeting

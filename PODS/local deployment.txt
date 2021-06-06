@@ -1,0 +1,7 @@
+This file shows commands to launch the pods and forward traffic
+sudo kubectl run demonginx --image=nginx
+sudo kubectl port-forward demonignx 8080:80
+kubectl delete pod demonginx #delete pod
+kubectl get pod demonginx -o yaml > anyfile.yaml
+
+
