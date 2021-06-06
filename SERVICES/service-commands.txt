@@ -1,0 +1,3 @@
+# types - node port, cluster ip, load balancer port, external name
+# clsuter ip - exposed internally with in cluster, only pods can talk to each other using cluster ip
+# node port - static port assigned

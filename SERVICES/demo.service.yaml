@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: springdemo
+  labels:
+    name: springdemo
+spec:
+  type: LoadBalancer
+  selector:
+    name: springdemo
+  ports:
+    - name: "9000"
+      port: 9000
+      targetPort: 7070
+
+
