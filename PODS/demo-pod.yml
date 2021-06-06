@@ -6,3 +6,6 @@ spec:
   containers:
     - name: my-nginx
       image: nginx
+#    envFrom:
+#      - configMapRef:
+#          name: demo-configs
