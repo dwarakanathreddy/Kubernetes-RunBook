@@ -1,0 +1,22 @@
+HELM
+helm init
+helm repo update
+helm search repo# searches for charts
+helm search kube 
+helm inspect [stable/mariadb]
+helm install [use name] [chart_name] --version vname
+helm inspect values [chart_name]
+kubectl create clusterrolebinding add-on-cluster-admin \
+    --clusterrole=cluster-admin \
+    --serviceaccount=kube-system:default  ## this will admin service account and lets install charts
+	
+sudo apt-get install -y figlet # to install figlet
+helm list -all # to see all the releases
+helm get manifest releasename # to get  manifest file containing all the deployed units for that release
+helm history appname
+helm unistall appname --keep-history #to uninstall
+helm rollback appname revisionNumber
+helm install chart location_of_our_chart
+helm package
+helm pull chart_name --untar
+helm create myChart
