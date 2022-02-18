@@ -7,3 +7,19 @@ kubectl create -f file.pod.yml --dry-run --validate=true
 kubectl apply -f file.yml --save-config #save config will save annotations
 kubectl describe resoure resource_name
 kubectl exec pod_name -it sh
+
+kubectl -n kube-system get pod prometheus-to-sd-rwbqr -o yaml > mypod_def.yml ## we can use this command to generate temp deployment file and later modify
+watch kubectl get all -o wide
+kubectl create namespace NAME_SPACE
+kubectl label node NODE_NAME key=value
+kubectl get node gke-cluster-1-NODE_NAME --show-labels
+kubectl get pod POD_NAME --show-labels
+Admission Controller: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/
+DaemonSet: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
+Jobs: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+Cron Jobs: https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/
+TTL for Jobs: https://kubernetes.io/docs/concepts/workloads/controllers/ttlafterfinished/
+gcloud compute ssh NODE-NAME --zone ZONE # command to login into a node
+kubectl -namespace default prt-forward $POD_NAME 8080:8080 #forward port traffic to view
+kubectl create deployment --image=nginx --dry-run=client --output=yaml
+kubectl expose deployment nginx --type=loadBalancer --port 80 --dry-run=client --output=yaml
