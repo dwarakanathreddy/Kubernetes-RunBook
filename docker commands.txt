@@ -4,3 +4,9 @@ sudo docker push djampani/app-name
 
 
 # http://127.0.0.1:9000/hello/greeting
+
+
+
+# DOCKER COMPOSE COMMANDS
+
+docker compose up --build SERVICE_NAME1 SERVICE_NAME2.....
