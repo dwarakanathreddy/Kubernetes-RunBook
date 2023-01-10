@@ -23,3 +23,4 @@ gcloud compute ssh NODE-NAME --zone ZONE # command to login into a node
 kubectl -namespace default prt-forward $POD_NAME 8080:8080 #forward port traffic to view
 kubectl create deployment --image=nginx --dry-run=client --output=yaml
 kubectl expose deployment nginx --type=loadBalancer --port 80 --dry-run=client --output=yaml
+kubectl logs -l app=mynginx -f # logs for all pods based on selector
