@@ -24,3 +24,6 @@ kubectl -namespace default prt-forward $POD_NAME 8080:8080 #forward port traffic
 kubectl create deployment --image=nginx --dry-run=client --output=yaml
 kubectl expose deployment nginx --type=loadBalancer --port 80 --dry-run=client --output=yaml
 kubectl logs -l app=mynginx -f # logs for all pods based on selector
+
+# https://github.com/stern/stern use stern for logs for more than 5 pods apps
+
