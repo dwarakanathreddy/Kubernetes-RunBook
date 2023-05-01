@@ -27,3 +27,18 @@ kubectl logs -l app=mynginx -f # logs for all pods based on selector
 
 # https://github.com/stern/stern use stern for logs for more than 5 pods apps
 
+# config file creation and modifications
+
+kubectl config --kubeconfig=base-config set-cluster development --server=https://1.2.3.4
+kubectl config --kubeconfig=base-config set-credentials experimenter --username=dev --password=some-password
+kubectl config --kubeconfig=base-config set-context dev-frontend --cluster=development --namespace=frontend --user=experimenter
+kubectl config --kubeconfig=base-config set-cluster production --server=https://4.5.6.7
+kubectl config --kubeconfig=base-config set-context prod-frontend --cluster=production --namespace=frontend --user=experimenter
+
+kubectl config --kubeconfig=base-config view
+kubectl config --kubeconfig=base-config get-contexts
+kubectl config --kubeconfig=base-config use-context dev-frontend
+
+#certificate creation
+https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/certificate-steps.md
+
