@@ -1,14 +1,14 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-  labels:
-    name: nginx
-spec:
-  type: LoadBalancer
-  selector:
-    name: springdemo
-  ports:
-    - name: "9000"
-      port: 9000
-      targetPort: 80
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: my-service
+#   labels:
+#     name: nginx
+# spec:
+#   type: LoadBalancer
+#   selector:
+#     name: springdemo
+#   ports:
+#     - name: "9000"
+#       port: 9000
+#       targetPort: 80
