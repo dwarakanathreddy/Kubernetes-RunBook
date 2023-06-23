@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo-nginx-deployment
-  # annotations:
-  #   argocd.argoproj.io/hook: PreSync
+  annotations:
+    argocd.argoproj.io/hook: Skip
   labels:
     app: nginx
 spec:
