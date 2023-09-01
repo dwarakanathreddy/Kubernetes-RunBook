@@ -1,2 +1,2 @@
 FROM ep 
-ENTRYPOINT ["main.py"]
+CMD ["main.py"]
