@@ -8,3 +8,30 @@
   #check the nodes
 
   docker node ls
+
+# create service
+docker service create --name webserver --replicas 1 nginx 
+
+# Scaling Up Operation
+docker service scale webserver=5
+
+# Scaling Down Operation
+docker service scale webserver=1
+
+# Verify Service Details:
+docker service ps webserver
+
+# Remove Service After Practical:
+
+docker service rm webserver 
+
+# scaling the services
+    docker service scale service01=1
+    docker service update --replicas 1 service02
+    docker service scale service01=3 service02=3 
+
+# Global Service , similar to daemon set in k8s
+    docker service create --name antivirus --mode global -dt ubuntu
+    docker service ps antivirus
+# Replicated Service
+    docker service create --name myreplica --replicas 1 nginx 
