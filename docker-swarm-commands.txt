@@ -1,0 +1,10 @@
+# initialize and add docker swarm nodes
+
+#  in main node
+
+    ifconfig eth0
+    docker swarm init --advertise-addr <IP FROM ETH0>
+
+  #check the nodes
+
+  docker node ls
