@@ -35,3 +35,13 @@ docker service rm webserver
     docker service ps antivirus
 # Replicated Service
     docker service create --name myreplica --replicas 1 nginx 
+
+# Inspecting a Service
+    docker service inspect demotroubleshoot
+    docker service inspect demotroubleshoot --pretty
+
+# Inspecting a Node
+    docker node inspect swarm01 
+    docker node inspect swarm01 -pretty
+# port
+docker service create --name mywebserver --replicas 1 --publish 8080:80 nginx
